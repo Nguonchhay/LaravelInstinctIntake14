@@ -10,7 +10,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ route('backends.dashboard') }}">
+        <a href="{{ route('backends.services.index') }}">
             <i class="bi bi-check-circle-fill"></i> Services
         </a>
     </li>
