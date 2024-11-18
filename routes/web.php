@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home');
-});
+})->name('pages.home');
 
 Route::get('/services/{id}', function () {
     return view('pages.service_detail');
@@ -21,7 +21,8 @@ Route::group([
     })->name('backends.dashboard');
 
     Route::group([
-        'prefix' => 'categories'
+        'prefix' => 'categories',
+        'middleware' => [App\Http\Middleware\AdminRoleMiddleware::class]
     ], function() {
         Route::get(
             '/', 
@@ -53,6 +54,10 @@ Route::group([
         'as' => 'backends'
     ]);
    
+    Route::get(
+        '/users', 
+        [App\Http\Controllers\Backends\UserController::class, 'index']
+    )->name('backends.users.index');
 });
 
 

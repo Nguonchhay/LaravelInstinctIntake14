@@ -24,4 +24,9 @@
             <i class="bi bi-check-circle-fill"></i> Contact Form
         </a>
     </li>
+    <li>
+        <a href="{{ route('backends.users.index') }}">
+            <i class="bi bi-check-circle-fill"></i> Users
+        </a>
+    </li>
 </ul>
