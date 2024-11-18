@@ -4,11 +4,13 @@
             <i class="bi bi-check-circle-fill"></i> Dashboard
         </a>
     </li>
-    <li>
-        <a href="{{ url('/backends/categories') }}">
-            <i class="bi bi-check-circle-fill"></i> Categories
-        </a>
-    </li>
+    @can('view-category')
+        <li>
+            <a href="{{ url('/backends/categories') }}">
+                <i class="bi bi-check-circle-fill"></i> Categories
+            </a>
+        </li>
+    @endcan
     <li>
         <a href="{{ route('backends.services.index') }}">
             <i class="bi bi-check-circle-fill"></i> Services
