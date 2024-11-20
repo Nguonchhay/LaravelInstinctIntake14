@@ -30,7 +30,9 @@
                         <th scope="col">Category</th>
                         <th scope="col">Title</th>
                         <th scope="col">
-                            <a href="{{ route('backends.services.create') }}">+ New</a>
+                            @can('createAndStore')
+                              <a href="{{ route('backends.services.create') }}">+ New</a>
+                            @endcan
                         </th>
                     </tr>
                 </thead>
@@ -43,8 +45,14 @@
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a href="{{ route('backends.services.show', $service->id) }}" class="btn btn-primary">Show</a>
-                                    <a href="{{ route('backends.services.edit', $service->id) }}" class="btn btn-primary">Edit</a>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    
+                                    @can('editAndUpdate')
+                                      <a href="{{ route('backends.services.edit', $service->id) }}" class="btn btn-primary">Edit</a>
+                                    @endcan
+
+                                    @can('destroy')
+                                      <button type="button" class="btn btn-danger">Delete</button>
+                                    @endcan
                                 </div>
                             </td>
                         </tr>
