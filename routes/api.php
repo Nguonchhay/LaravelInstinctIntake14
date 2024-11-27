@@ -14,5 +14,7 @@ Route::group([
     });
     
     Route::apiResource('categories', App\Http\Controllers\Api\CategoryAPIController::class);
+
+    Route::get('/services', [App\Http\Controllers\Api\ServiceAPIController::class, 'index']);
     
 });

@@ -30,9 +30,8 @@
                         <th scope="col">Category</th>
                         <th scope="col">Title</th>
                         <th scope="col">
-                            @can('createAndStore')
                               <a href="{{ route('backends.services.create') }}">+ New</a>
-                            @endcan
+                          
                         </th>
                     </tr>
                 </thead>
