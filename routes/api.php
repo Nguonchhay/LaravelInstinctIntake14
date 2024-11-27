@@ -3,10 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/auth/login', [App\Http\Controllers\Api\AuthAPIController::class, 'login']);
 
 Route::group([
-    'middleware' => 'auth:sanctum'
+    'middleware' => 'auth'
 ], function() {
 
     Route::get('/user', function (Request $request) {

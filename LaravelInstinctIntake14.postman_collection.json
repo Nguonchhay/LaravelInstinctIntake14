@@ -58,6 +58,56 @@
 			"response": []
 		},
 		{
+			"name": "Service - list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|MPL0dRe20GNmYjrFIjQjYYcA8UtXYv5nv4R5jEpM19776bad",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/services?title=Milk",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"services"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Milk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Category - store",
 			"request": {
 				"method": "POST",
@@ -262,6 +312,92 @@
 						"api",
 						"auth",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Passport - client credentials",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grant_type\": \"client_credentials\",\n    \"client_id\": \"9d96d19d-5af9-416c-9ed3-9edf4dc3b442\",\n    \"client_secret\": \"4TWpKy3QXCb4a9cIZsyV93KZ5Mf47CCY3jJKirVy\",\n    \"scope\": \"*\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/oauth/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Passport - password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grant_type\": \"password\",\n    \"client_id\": \"9d96d7c7-d709-4b84-967f-f597d47264b4\",\n    \"client_secret\": \"yOmtziar53YryqTQMnJYrAUB6xfaqFbhR0uJnEMV\",\n    \"username\": \"sok@gmail.com\",\n    \"password\": \"12345678\",\n    \"scope\": \"*\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/oauth/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"oauth",
+						"token"
 					]
 				}
 			},
